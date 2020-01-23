@@ -1,0 +1,2 @@
+camera_tut:pubsubmodel:pythonsubpub:service_tut:tut_service:using_markers
+-DCATKIN_DEVEL_PREFIX=/home/komodo/Desktop/Projects/ROS/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/komodo/Desktop/Projects/ROS/ros_ws/install -G Unix Makefiles

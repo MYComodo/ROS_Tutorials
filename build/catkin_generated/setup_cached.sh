@@ -7,11 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/komodo/Desktop/Projects/ROS/ros_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/komodo/Desktop/Projects/ROS/ros_ws/devel/lib:$LD_LIBRARY_PATH"
-export PATH="/opt/ros/melodic/bin:/home/komodo/.nvm/versions/node/v13.3.0/bin:/home/komodo/.sdkman/candidates/gradle/current/bin:/home/komodo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export PKG_CONFIG_PATH="/home/komodo/Desktop/Projects/ROS/ros_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export LD_LIBRARY_PATH="/opt/ros/melodic/lib"
+export PKG_CONFIG_PATH="/opt/ros/melodic/lib/pkgconfig"
 export PWD="/home/komodo/Desktop/Projects/ROS/ros_ws/build"
-export PYTHONPATH="/home/komodo/Desktop/Projects/ROS/ros_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/komodo/Desktop/Projects/ROS/ros_ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/komodo/Desktop/Projects/ROS/ros_ws/src:$ROS_PACKAGE_PATH"
+export PYTHONPATH="/opt/ros/melodic/lib/python2.7/dist-packages"

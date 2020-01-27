@@ -284,11 +284,8 @@ _gtest_INCLUDES:FILEPATH=/usr/src/googletest/googletest/include/gtest/gtest.h
 //Path to a file.
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
-//Value Computed by CMake
-beginner_tutorials_BINARY_DIR:STATIC=/home/komodo/Desktop/Projects/ROS/ros_ws/build/SubPubExample
-
-//Value Computed by CMake
-beginner_tutorials_SOURCE_DIR:STATIC=/home/komodo/Desktop/Projects/ROS/ros_ws/src/SubPubExample
+//The directory containing a CMake configuration file for actionlib_msgs.
+actionlib_msgs_DIR:PATH=/opt/ros/melodic/share/actionlib_msgs/cmake
 
 //Value Computed by CMake
 camera_tut_BINARY_DIR:STATIC=/home/komodo/Desktop/Projects/ROS/ros_ws/build/camera_tut
@@ -448,12 +445,6 @@ service_tut_SOURCE_DIR:STATIC=/home/komodo/Desktop/Projects/ROS/ros_ws/src/servi
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
 
 //Value Computed by CMake
-tut_service_BINARY_DIR:STATIC=/home/komodo/Desktop/Projects/ROS/ros_ws/build/tut_service
-
-//Value Computed by CMake
-tut_service_SOURCE_DIR:STATIC=/home/komodo/Desktop/Projects/ROS/ros_ws/src/tut_service
-
-//Value Computed by CMake
 using_markers_BINARY_DIR:STATIC=/home/komodo/Desktop/Projects/ROS/ros_ws/build/using_markers
 
 //Value Computed by CMake
@@ -575,7 +566,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

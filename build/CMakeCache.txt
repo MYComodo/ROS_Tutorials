@@ -218,6 +218,12 @@ EMPY_EXECUTABLE:FILEPATH=/usr/bin/empy
 //Empy script
 EMPY_SCRIPT:STRING=/usr/bin/empy
 
+//Value Computed by CMake
+ENESMALMISIN_BINARY_DIR:STATIC=/home/komodo/Desktop/Projects/ROS/ros_ws/build/ENESMALMISIN
+
+//Value Computed by CMake
+ENESMALMISIN_SOURCE_DIR:STATIC=/home/komodo/Desktop/Projects/ROS/ros_ws/src/ENESMALMISIN
+
 //The directory containing a CMake configuration file for GMock.
 GMock_DIR:PATH=GMock_DIR-NOTFOUND
 

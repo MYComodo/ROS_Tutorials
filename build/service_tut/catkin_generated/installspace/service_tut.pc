@@ -3,6 +3,6 @@ prefix=/home/komodo/Desktop/Projects/ROS/ros_ws/install
 Name: service_tut
 Description: Description of service_tut
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/komodo/Desktop/Projects/ROS/ros_ws/install/include
 Libs: -L/home/komodo/Desktop/Projects/ROS/ros_ws/install/lib 
 Requires: 

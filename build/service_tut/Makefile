@@ -112,6 +112,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,17 +134,6 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,49 +168,64 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+service_tut/CMakeFiles/adder_client.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/adder_client.dir/rule
+.PHONY : service_tut/CMakeFiles/adder_client.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_eus: service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+adder_client: service_tut/CMakeFiles/adder_client.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_eus
+.PHONY : adder_client
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
+adder_client/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/adder_client.dir/build.make service_tut/CMakeFiles/adder_client.dir/build
+.PHONY : adder_client/fast
 
 # Convenience name for target.
-service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+service_tut/CMakeFiles/service_tut_genpy.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_genpy.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_genpy.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_cpp: service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+service_tut_genpy: service_tut/CMakeFiles/service_tut_genpy.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_cpp
+.PHONY : service_tut_genpy
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
+service_tut_genpy/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_genpy.dir/build.make service_tut/CMakeFiles/service_tut_genpy.dir/build
+.PHONY : service_tut_genpy/fast
 
 # Convenience name for target.
-service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+service_tut/CMakeFiles/service_tut_genlisp.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_genlisp.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_genlisp.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_lisp: service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+service_tut_genlisp: service_tut/CMakeFiles/service_tut_genlisp.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_lisp
+.PHONY : service_tut_genlisp
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
+service_tut_genlisp/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_genlisp.dir/build.make service_tut/CMakeFiles/service_tut_genlisp.dir/build
+.PHONY : service_tut_genlisp/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/service_tut_generate_messages.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_generate_messages.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_generate_messages.dir/rule
+
+# Convenience name for target.
+service_tut_generate_messages: service_tut/CMakeFiles/service_tut_generate_messages.dir/rule
+
+.PHONY : service_tut_generate_messages
+
+# fast build rule for target.
+service_tut_generate_messages/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_generate_messages.dir/build.make service_tut/CMakeFiles/service_tut_generate_messages.dir/build
+.PHONY : service_tut_generate_messages/fast
 
 # Convenience name for target.
 service_tut/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
@@ -228,6 +243,66 @@ actionlib_msgs_generate_messages_nodejs/fast:
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_lisp: service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make service_tut/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/service_tut_gencpp.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_gencpp.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_gencpp.dir/rule
+
+# Convenience name for target.
+service_tut_gencpp: service_tut/CMakeFiles/service_tut_gencpp.dir/rule
+
+.PHONY : service_tut_gencpp
+
+# fast build rule for target.
+service_tut_gencpp/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_gencpp.dir/build.make service_tut/CMakeFiles/service_tut_gencpp.dir/build
+.PHONY : service_tut_gencpp/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_cpp: service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_cpp/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make service_tut/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+.PHONY : service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_eus: service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_eus
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_eus/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make service_tut/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 service_tut/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
 	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
 .PHONY : service_tut/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
@@ -242,6 +317,195 @@ actionlib_msgs_generate_messages_py/fast:
 	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make service_tut/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
+# Convenience name for target.
+service_tut/CMakeFiles/_service_tut_generate_messages_check_deps_AddTwoInts.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/_service_tut_generate_messages_check_deps_AddTwoInts.dir/rule
+.PHONY : service_tut/CMakeFiles/_service_tut_generate_messages_check_deps_AddTwoInts.dir/rule
+
+# Convenience name for target.
+_service_tut_generate_messages_check_deps_AddTwoInts: service_tut/CMakeFiles/_service_tut_generate_messages_check_deps_AddTwoInts.dir/rule
+
+.PHONY : _service_tut_generate_messages_check_deps_AddTwoInts
+
+# fast build rule for target.
+_service_tut_generate_messages_check_deps_AddTwoInts/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/_service_tut_generate_messages_check_deps_AddTwoInts.dir/build.make service_tut/CMakeFiles/_service_tut_generate_messages_check_deps_AddTwoInts.dir/build
+.PHONY : _service_tut_generate_messages_check_deps_AddTwoInts/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/service_tut_generate_messages_cpp.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_generate_messages_cpp.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+service_tut_generate_messages_cpp: service_tut/CMakeFiles/service_tut_generate_messages_cpp.dir/rule
+
+.PHONY : service_tut_generate_messages_cpp
+
+# fast build rule for target.
+service_tut_generate_messages_cpp/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_generate_messages_cpp.dir/build.make service_tut/CMakeFiles/service_tut_generate_messages_cpp.dir/build
+.PHONY : service_tut_generate_messages_cpp/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/adder_server.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/adder_server.dir/rule
+.PHONY : service_tut/CMakeFiles/adder_server.dir/rule
+
+# Convenience name for target.
+adder_server: service_tut/CMakeFiles/adder_server.dir/rule
+
+.PHONY : adder_server
+
+# fast build rule for target.
+adder_server/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/adder_server.dir/build.make service_tut/CMakeFiles/adder_server.dir/build
+.PHONY : adder_server/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/service_tut_generate_messages_eus.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_generate_messages_eus.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+service_tut_generate_messages_eus: service_tut/CMakeFiles/service_tut_generate_messages_eus.dir/rule
+
+.PHONY : service_tut_generate_messages_eus
+
+# fast build rule for target.
+service_tut_generate_messages_eus/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_generate_messages_eus.dir/build.make service_tut/CMakeFiles/service_tut_generate_messages_eus.dir/build
+.PHONY : service_tut_generate_messages_eus/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/service_tut_geneus.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_geneus.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_geneus.dir/rule
+
+# Convenience name for target.
+service_tut_geneus: service_tut/CMakeFiles/service_tut_geneus.dir/rule
+
+.PHONY : service_tut_geneus
+
+# fast build rule for target.
+service_tut_geneus/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_geneus.dir/build.make service_tut/CMakeFiles/service_tut_geneus.dir/build
+.PHONY : service_tut_geneus/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/service_tut_generate_messages_lisp.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_generate_messages_lisp.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+service_tut_generate_messages_lisp: service_tut/CMakeFiles/service_tut_generate_messages_lisp.dir/rule
+
+.PHONY : service_tut_generate_messages_lisp
+
+# fast build rule for target.
+service_tut_generate_messages_lisp/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_generate_messages_lisp.dir/build.make service_tut/CMakeFiles/service_tut_generate_messages_lisp.dir/build
+.PHONY : service_tut_generate_messages_lisp/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/service_tut_generate_messages_nodejs.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_generate_messages_nodejs.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+service_tut_generate_messages_nodejs: service_tut/CMakeFiles/service_tut_generate_messages_nodejs.dir/rule
+
+.PHONY : service_tut_generate_messages_nodejs
+
+# fast build rule for target.
+service_tut_generate_messages_nodejs/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_generate_messages_nodejs.dir/build.make service_tut/CMakeFiles/service_tut_generate_messages_nodejs.dir/build
+.PHONY : service_tut_generate_messages_nodejs/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/service_tut_gennodejs.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_gennodejs.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_gennodejs.dir/rule
+
+# Convenience name for target.
+service_tut_gennodejs: service_tut/CMakeFiles/service_tut_gennodejs.dir/rule
+
+.PHONY : service_tut_gennodejs
+
+# fast build rule for target.
+service_tut_gennodejs/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_gennodejs.dir/build.make service_tut/CMakeFiles/service_tut_gennodejs.dir/build
+.PHONY : service_tut_gennodejs/fast
+
+# Convenience name for target.
+service_tut/CMakeFiles/service_tut_generate_messages_py.dir/rule:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 service_tut/CMakeFiles/service_tut_generate_messages_py.dir/rule
+.PHONY : service_tut/CMakeFiles/service_tut_generate_messages_py.dir/rule
+
+# Convenience name for target.
+service_tut_generate_messages_py: service_tut/CMakeFiles/service_tut_generate_messages_py.dir/rule
+
+.PHONY : service_tut_generate_messages_py
+
+# fast build rule for target.
+service_tut_generate_messages_py/fast:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/service_tut_generate_messages_py.dir/build.make service_tut/CMakeFiles/service_tut_generate_messages_py.dir/build
+.PHONY : service_tut_generate_messages_py/fast
+
+src/adder_client.o: src/adder_client.cpp.o
+
+.PHONY : src/adder_client.o
+
+# target to build an object file
+src/adder_client.cpp.o:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/adder_client.dir/build.make service_tut/CMakeFiles/adder_client.dir/src/adder_client.cpp.o
+.PHONY : src/adder_client.cpp.o
+
+src/adder_client.i: src/adder_client.cpp.i
+
+.PHONY : src/adder_client.i
+
+# target to preprocess a source file
+src/adder_client.cpp.i:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/adder_client.dir/build.make service_tut/CMakeFiles/adder_client.dir/src/adder_client.cpp.i
+.PHONY : src/adder_client.cpp.i
+
+src/adder_client.s: src/adder_client.cpp.s
+
+.PHONY : src/adder_client.s
+
+# target to generate assembly for a file
+src/adder_client.cpp.s:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/adder_client.dir/build.make service_tut/CMakeFiles/adder_client.dir/src/adder_client.cpp.s
+.PHONY : src/adder_client.cpp.s
+
+src/adder_server.o: src/adder_server.cpp.o
+
+.PHONY : src/adder_server.o
+
+# target to build an object file
+src/adder_server.cpp.o:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/adder_server.dir/build.make service_tut/CMakeFiles/adder_server.dir/src/adder_server.cpp.o
+.PHONY : src/adder_server.cpp.o
+
+src/adder_server.i: src/adder_server.cpp.i
+
+.PHONY : src/adder_server.i
+
+# target to preprocess a source file
+src/adder_server.cpp.i:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/adder_server.dir/build.make service_tut/CMakeFiles/adder_server.dir/src/adder_server.cpp.i
+.PHONY : src/adder_server.cpp.i
+
+src/adder_server.s: src/adder_server.cpp.s
+
+.PHONY : src/adder_server.s
+
+# target to generate assembly for a file
+src/adder_server.cpp.s:
+	cd /home/komodo/Desktop/Projects/ROS/ros_ws/build && $(MAKE) -f service_tut/CMakeFiles/adder_server.dir/build.make service_tut/CMakeFiles/adder_server.dir/src/adder_server.cpp.s
+.PHONY : src/adder_server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -253,13 +517,33 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... actionlib_msgs_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... install/local"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... test"
+	@echo "... install/local"
+	@echo "... adder_client"
+	@echo "... service_tut_genpy"
+	@echo "... service_tut_genlisp"
+	@echo "... service_tut_generate_messages"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... service_tut_gencpp"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... _service_tut_generate_messages_check_deps_AddTwoInts"
+	@echo "... service_tut_generate_messages_cpp"
+	@echo "... adder_server"
+	@echo "... service_tut_generate_messages_eus"
+	@echo "... service_tut_geneus"
+	@echo "... service_tut_generate_messages_lisp"
+	@echo "... service_tut_generate_messages_nodejs"
+	@echo "... service_tut_gennodejs"
+	@echo "... service_tut_generate_messages_py"
+	@echo "... src/adder_client.o"
+	@echo "... src/adder_client.i"
+	@echo "... src/adder_client.s"
+	@echo "... src/adder_server.o"
+	@echo "... src/adder_server.i"
+	@echo "... src/adder_server.s"
 .PHONY : help
 
 

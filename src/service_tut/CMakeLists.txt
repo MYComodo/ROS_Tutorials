@@ -69,11 +69,11 @@ find_package(catkin REQUIRED COMPONENTS
 #   Action2.action
 # )
 
-## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   actionlib_msgs#   std_msgs
-# )
+#Generate added messages and services with any dependencies listed here
+ generate_messages(
+   DEPENDENCIES
+   actionlib_msgs   std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -136,7 +136,14 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/service_tut_node.cpp)
+add_executable(adder_server src/adder_server.cpp)
+target_link_libraries(adder_server ${catkin_LIBRARIES})
+add_dependencies(adder_server adder_server_gencpp)
 
+
+add_executable(adder_client src/adder_client.cpp)
+target_link_libraries(adder_client ${catkin_LIBRARIES})
+add_dependencies(adder_client adder_client_gencpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -151,6 +158,7 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
 
 #############
 ## Install ##
